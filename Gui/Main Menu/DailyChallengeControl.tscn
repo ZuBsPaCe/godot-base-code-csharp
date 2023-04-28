@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2u0bpkwyvsuw"]
+
+[ext_resource type="Theme" uid="uid://dukrcqa657jnc" path="res://Gui/MyTheme.tres" id="1_k5nq6"]
+
+[node name="DailyChallengeControl" type="MarginContainer"]
+offset_right = 1344.0
+offset_bottom = 1080.0
+theme = ExtResource("1_k5nq6")
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2

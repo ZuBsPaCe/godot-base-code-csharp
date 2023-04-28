@@ -1,0 +1,30 @@
+[gd_scene load_steps=10 format=3 uid="uid://ct0cjsm13we6r"]
+
+[ext_resource type="Script" path="res://Gui/Main Menu/MainMenu.cs" id="1_4qcmp"]
+[ext_resource type="Theme" uid="uid://dukrcqa657jnc" path="res://Gui/MyTheme.tres" id="1_phedu"]
+[ext_resource type="PackedScene" uid="uid://thy7el8r112x" path="res://Base/Framework/StateMachine.tscn" id="2_k4iqq"]
+[ext_resource type="PackedScene" uid="uid://d0trbxg6ctg13" path="res://Gui/Main Menu/ButtonBar.tscn" id="3_5flpn"]
+[ext_resource type="PackedScene" uid="uid://igvq1fgdn7a0" path="res://Gui/Main Menu/StoryControl.tscn" id="5_0gu8w"]
+[ext_resource type="PackedScene" uid="uid://c67fkiftmeruc" path="res://Gui/Main Menu/SingleplayerControl.tscn" id="5_0y6dn"]
+[ext_resource type="PackedScene" uid="uid://deel7lbllgjs8" path="res://Gui/Main Menu/CouchCoopControl.tscn" id="6_se8pu"]
+[ext_resource type="PackedScene" uid="uid://b2u0bpkwyvsuw" path="res://Gui/Main Menu/DailyChallengeControl.tscn" id="7_kr05m"]
+[ext_resource type="PackedScene" uid="uid://uxxnejcqr03j" path="res://Gui/Main Menu/SettingsControl.tscn" id="8_j48yy"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_4qcmp")
+_sceneMenuStateMachine = ExtResource("2_k4iqq")
+_sceneButtonBar = ExtResource("3_5flpn")
+_sceneStoryControl = ExtResource("5_0gu8w")
+_sceneSingleplayerControl = ExtResource("5_0y6dn")
+_sceneCouchCoopControl = ExtResource("6_se8pu")
+_sceneDailyChallengeControl = ExtResource("7_kr05m")
+_sceneSettingsControl = ExtResource("8_j48yy")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_phedu")

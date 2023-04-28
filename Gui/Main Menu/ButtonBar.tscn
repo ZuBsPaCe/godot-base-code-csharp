@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0trbxg6ctg13"]
+
+[ext_resource type="Theme" uid="uid://dukrcqa657jnc" path="res://Gui/MyTheme.tres" id="1_tat7l"]
+[ext_resource type="Script" path="res://Gui/Main Menu/ButtonBar.cs" id="2_dytuj"]
+
+[node name="ButtonBar" type="MarginContainer"]
+offset_left = 1344.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = ExtResource("1_tat7l")
+script = ExtResource("2_dytuj")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="StoryButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../ExitButton")
+focus_neighbor_bottom = NodePath("../SingleplayerButton")
+toggle_mode = true
+text = "Story Mode"
+
+[node name="SingleplayerButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../StoryButton")
+focus_neighbor_bottom = NodePath("../CouchCoopButton")
+toggle_mode = true
+text = "Singleplayer"
+
+[node name="CouchCoopButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../SingleplayerButton")
+focus_neighbor_bottom = NodePath("../DailyChallengeButton")
+toggle_mode = true
+text = "Couch Co-op"
+
+[node name="DailyChallengeButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../CouchCoopButton")
+focus_neighbor_bottom = NodePath("../SettingsButton")
+toggle_mode = true
+text = "Daily Challenge"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../DailyChallengeButton")
+focus_neighbor_bottom = NodePath("../ExitButton")
+toggle_mode = true
+text = "Settings"
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../SettingsButton")
+focus_neighbor_bottom = NodePath("../StoryButton")
+text = "Exit"
+
+[connection signal="focus_entered" from="VBoxContainer/StoryButton" to="." method="StoryButton_FocusEntered"]
+[connection signal="mouse_entered" from="VBoxContainer/StoryButton" to="." method="AllButtons_MouseEntered"]
+[connection signal="toggled" from="VBoxContainer/StoryButton" to="." method="StoryButton_Toggled"]
+[connection signal="focus_entered" from="VBoxContainer/SingleplayerButton" to="." method="SingleplayerButton_FocusEntered"]
+[connection signal="mouse_entered" from="VBoxContainer/SingleplayerButton" to="." method="AllButtons_MouseEntered"]
+[connection signal="toggled" from="VBoxContainer/SingleplayerButton" to="." method="SingleplayerButton_Toggled"]
+[connection signal="focus_entered" from="VBoxContainer/CouchCoopButton" to="." method="CouchCoopButton_FocusEntered"]
+[connection signal="mouse_entered" from="VBoxContainer/CouchCoopButton" to="." method="AllButtons_MouseEntered"]
+[connection signal="toggled" from="VBoxContainer/CouchCoopButton" to="." method="CouchCoopButton_Toggled"]
+[connection signal="focus_entered" from="VBoxContainer/DailyChallengeButton" to="." method="DailyChallengeButton_FocusEntered"]
+[connection signal="mouse_entered" from="VBoxContainer/DailyChallengeButton" to="." method="AllButtons_MouseEntered"]
+[connection signal="toggled" from="VBoxContainer/DailyChallengeButton" to="." method="DailyChallengeButton_Toggled"]
+[connection signal="focus_entered" from="VBoxContainer/SettingsButton" to="." method="SettingsButton_FocusEntered"]
+[connection signal="mouse_entered" from="VBoxContainer/SettingsButton" to="." method="AllButtons_MouseEntered"]
+[connection signal="toggled" from="VBoxContainer/SettingsButton" to="." method="SettingsButton_Toggled"]
+[connection signal="focus_entered" from="VBoxContainer/ExitButton" to="." method="ExitButton_FocusEntered"]
+[connection signal="mouse_entered" from="VBoxContainer/ExitButton" to="." method="AllButtons_MouseEntered"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="ExitButton_Pressed"]

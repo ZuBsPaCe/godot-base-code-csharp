@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3pp16r1lhk4a"]
+
+[ext_resource type="Script" path="res://Game/Sounds/SoundStore.cs" id="1_1qo56"]
+[ext_resource type="AudioStream" uid="uid://bf5i4sahkqn8j" path="res://Game/Sounds/Hover.mp3" id="2_6d7hf"]
+[ext_resource type="AudioStream" uid="uid://cml32t2aaiww6" path="res://Game/Sounds/Select.mp3" id="3_doi82"]
+
+[node name="SoundStore" type="Node" node_paths=PackedStringArray("_mainMenuHover", "_mainMenuSelect")]
+script = ExtResource("1_1qo56")
+_mainMenuHover = NodePath("AudioStreamPlayer")
+_mainMenuSelect = NodePath("AudioStreamPlayer2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6d7hf")
+volume_db = -6.741
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_doi82")

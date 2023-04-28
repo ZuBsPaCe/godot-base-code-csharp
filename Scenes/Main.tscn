@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://djk0psdsfas6n"]
+
+[ext_resource type="Script" path="res://Game/Scripts/Main.cs" id="1_kyl25"]
+[ext_resource type="PackedScene" uid="uid://thy7el8r112x" path="res://Base/Framework/StateMachine.tscn" id="2_3g0d3"]
+[ext_resource type="PackedScene" uid="uid://ct0cjsm13we6r" path="res://Gui/Main Menu/MainMenu.tscn" id="3_mgh42"]
+[ext_resource type="PackedScene" uid="uid://b3pp16r1lhk4a" path="res://Game/Sounds/SoundStore.tscn" id="4_veahi"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_kyl25")
+_sceneGameStateMachine = ExtResource("2_3g0d3")
+_sceneMainMenu = ExtResource("3_mgh42")
+
+[node name="SoundStore" parent="." instance=ExtResource("4_veahi")]
